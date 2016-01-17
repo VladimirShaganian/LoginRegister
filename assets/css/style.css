@@ -1,0 +1,227 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+}
+ul {
+    border-bottom: 1px solid lightgray;
+    padding: 0;
+    margin: 0;
+}
+li {
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    height: 60px;
+
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+a {
+    text-decoration: none;
+    color: rgb(0,0,0);
+    text-transform: uppercase;
+}
+/* form */
+
+.form {
+    width: 360px;
+    margin: 8px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    background-color: white;
+
+    position: absolute;
+    top: 45%;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+
+.form-title {
+    text-align: center;
+    color: white;
+    background-color: #3f51b5;
+    font-size: 24px;
+    font-weight: 500;
+    padding: 16px 24px 16px 24px;
+}
+.form-content {
+
+    padding: 16px 24px 16px 24px;
+    word-wrap: break-word;
+}
+
+.form-field {
+    position: relative;
+    box-sizing: border-box;
+    width: 312px;
+    height: 80px;
+    padding: 0 0 0 0;
+
+
+}
+.form-field input{
+    box-sizing: border-box;
+    height: 54px;
+    display: block;
+    width: 100%;
+    padding: 26px 0 8px 0;
+    margin: 0 0 0 0;
+    font-size: 16px ;
+    font-weight: 400;
+    outline: none;
+}
+.form-message {
+
+    font-size: 12px;
+    color: darkgray;
+}
+.form-message-red {
+    font-size: 12px;
+    color: orangered;
+}
+.label-unfocused-gray {
+    position: absolute;
+    top: 28px;
+    color: darkgrey;
+    transition-duration: 0.1s;
+}
+.label-focused-blue {
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    color: royalblue;
+    transition-duration: 0.1s;
+ }
+.label-focused-gray {
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    color: darkgray;
+    transition-duration: 0.1s;
+}
+.label-unfocused-red {
+    position: absolute;
+    top: 28px;
+    color: orangered;
+    transition-duration: 0.1s;
+}
+
+.input-unfocused-gray {
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid darkgray;
+    transition-duration: 0.1s;
+}
+.input-focused-blue {
+    border: none;
+    border-bottom: 2px solid #3f51b5;
+    transition-duration: 0.1s;
+}
+.input-focused-gray {
+    border: none;
+    border-bottom: 2px solid darkgray;
+    transition-duration: 0.1s;
+}
+
+.input-unfocused-red {
+    border: none;
+    border-bottom: 1px solid orangered;
+    transition-duration: 0.1s;
+}
+
+.form-action {
+    padding: 8px 24px 8px 16px;
+
+}
+.button-submit {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: white;
+    width: 312px;
+    border: none;
+    outline: none;
+    padding: 0 8px 0 8px;
+    height: 36px;
+    margin: 0 8px 8px 8px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    background-color: #3f51b5;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16), 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.button-submit:active {
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19), 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+}
+.href {
+    margin: 8px 8px 16px 8px;
+    float: right;
+    font-size: 14px;
+    font-weight: 500;
+}
+.button-upload {
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    min-width: 64px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+    padding: 0 8px 0 0;
+    margin: 8px 8px 8px 0;
+    background-color: transparent;
+    text-transform: uppercase;
+    text-decoration: underline;
+    border-radius: 2px;
+
+}
+.form-field-upload input {
+     opacity:0;
+     z-index:1;
+     height: 36px;
+ }
+.form-field-upload span {
+    display: inline-block;
+}
+.image {
+    position: relative;
+}
+.image img {
+    position: relative;
+    height: 200px;
+    width: 200px;
+    left:50%;
+    transform: translate(-50%);
+}
+
+.image .image-profile {
+    margin: 8px 0 ;
+
+}
+.profile-name {
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+}
+ul li div {
+    padding-top: 8px
+}
+.form-profile .form-content {
+    padding-bottom: 8px;
+}
+.form-profile .href {
+    padding-right: 16px;
+}
+.required-span {
+    color: darkgray;
+}
+.required-span-red {
+    color: orangered;
+}
+.error-message {
+    padding: 10px 0 0 0;
+    color: orangered;
+    font-size: 14px;
+    text-align: center;
+}
