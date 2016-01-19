@@ -224,3 +224,9 @@ ul li div {
     font-size: 14px;
     text-align: center;
 }
+
+.lang {
+    display: inline;
+    float: left;
+    margin-left: 15px;
+}

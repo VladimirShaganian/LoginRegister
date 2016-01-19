@@ -2,10 +2,7 @@
 
 class Main_model extends Model
 {
-    public function __construct()
-    {
-        session_start();
-    }
+
     public function check_data()
     {
         $db = $this->db(); // подключение базы данных
@@ -27,7 +24,6 @@ class Main_model extends Model
                     return "false";
                 } else {
                     $row = $query->fetch();
-
                     $_SESSION['user_id'] = $row['id'];
                 }
             }
@@ -42,8 +38,8 @@ class Main_model extends Model
             if ($_POST['first_name']) {
                 $first_name = $_POST['first_name'];
             }
-            if ($_POST['last_name']) {
-                $last_name = $_POST['last_name'];
+            if ($_POST['second_name']) {
+                $last_name = $_POST['second_name'];
             } else {
                 $last_name = "";
             }
@@ -71,9 +67,11 @@ class Main_model extends Model
                 'email' => $email,
             ]);
 
-            if ($query->rowCount() == 0) {
+            if ($query->rowCount() != 0) {
+                return 'false';
+            } else {
                 $query = $db->prepare('INSERT INTO users (first_name, last_name, email, password, image)
-            VALUES (:first_name, :last_name, :email, :pass, :file_name)');
+                                        VALUES (:first_name, :last_name, :email, :pass, :file_name)');
                 $query->execute([
                     'first_name' => $first_name,
                     'last_name' => $last_name,
@@ -81,8 +79,6 @@ class Main_model extends Model
                     'pass' => $pass,
                     'file_name' => $file_name,
                 ]);
-            } else {
-                echo 'Пользователь с таким эл. адресом уже существует';
             }
         }
     }

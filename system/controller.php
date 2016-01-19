@@ -1,7 +1,12 @@
 <?php
 
 
-class Controller {
+class Controller
+{
+    public function __construct()
+    {
+        session_start();
+    }
 
     public function view($view, $data = [])
     {
@@ -16,6 +21,15 @@ class Controller {
         return new $model();
     }
 
+    public function i18n()
+    {
+        if (isset($_SESSION['lang']) && !empty($_SESSION['lang'])) {
+            $lang = $_SESSION['lang'];
+            return require_once $_SERVER['DOCUMENT_ROOT'] . "/system/i18n/" . $lang . ".php";
+        } else {
+            return require_once $_SERVER['DOCUMENT_ROOT'] . "/system/i18n/en.php"; // язык по умолчанию
+        }
+    }
 
 
 }

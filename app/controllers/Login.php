@@ -2,10 +2,16 @@
 
 class Login extends Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
     public function index()
     {
+        $data = $this->i18n();
         $this->view('templates/header');
-        $this->view('login');
+        $this->view('login', $data);
         $this->view('templates/footer');
     }
 
@@ -14,4 +20,6 @@ class Login extends Controller
         $model = $this->model('main_model');
         echo $model->check_data();
     }
+
+
 }
