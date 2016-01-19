@@ -3,6 +3,10 @@
 
 class Model
 {
+    /**
+     * Подключение базы данных
+     * @return PDO
+     */
     public function db()
     {
         require_once 'database.php';

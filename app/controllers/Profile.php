@@ -7,6 +7,9 @@ class Profile extends Controller
         parent::__construct();
     }
 
+    /**
+     * Отоборажение формы профиля
+     */
     public function index()
     {
         $model = $this->model('main_model');
@@ -21,6 +24,9 @@ class Profile extends Controller
 
     }
 
+    /**
+     *  Выход из профиля
+     */
     public function logout()
     {
 

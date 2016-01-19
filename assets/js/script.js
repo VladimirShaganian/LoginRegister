@@ -1,6 +1,6 @@
 
-
-function getLangData(callback) {
+// принимает массив i18n
+function ajaxData(callback) {
     var request = new XMLHttpRequest();
     request.open('POST', 'lang');
     request.onreadystatechange = function () {
@@ -12,8 +12,8 @@ function getLangData(callback) {
     request.send();
 }
 
-getLangData(function(langData) {
-    var message = langData.lang;
+ajaxData(function(langData) {
+    var message = langData.lang; // i18n
     /*
      * Проверка поля ввода на наличие введенной информации (если поле пустое выводится сообщение)
      *  field - поле для проверки

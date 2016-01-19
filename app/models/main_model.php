@@ -2,7 +2,10 @@
 
 class Main_model extends Model
 {
-
+    /**
+     * Проверка логин и пароля
+     * @return string
+     */
     public function check_data()
     {
         $db = $this->db(); // подключение базы данных
@@ -30,6 +33,10 @@ class Main_model extends Model
         }
     }
 
+    /**
+     * Сохранение в БД
+     * @return string
+     */
     public function save_data()
     {
         $db = $this->db(); // подключение базы данных
@@ -83,6 +90,10 @@ class Main_model extends Model
         }
     }
 
+    /**
+     * Выборка данных пользователя
+     * @return array
+     */
     public function get_data()
     {
         $user_id = $_SESSION['user_id'];

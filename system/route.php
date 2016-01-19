@@ -2,7 +2,6 @@
 
 class Route
 {
-
     public function init() {
 
         $controller = 'Login'; // Контроллер по умолчанию
@@ -12,8 +11,7 @@ class Route
 
         $uri_segment = explode('/', $uri['path']);
 
-        //$a = array_pop($uri_segment);
-
+        // определение выбранного языка
         if (end($uri_segment) == 'ru' || end($uri_segment) == 'en') {
             session_start();
             $_SESSION['lang'] = end($uri_segment);
@@ -22,18 +20,18 @@ class Route
             header('Location: http://' . $redirect . '/'. end($uri_segment));
         }
 
+        // определение контроллера
         if (!empty($uri_segment[1]))
         {
             $controller = $uri_segment[1];
-
         }
-
+        // определение метода
         if (!empty($uri_segment[2]))
         {
             $method = $uri_segment[2];
         }
 
-
+        // подключение контрллера
         $controller_file = $_SERVER['DOCUMENT_ROOT'] . '/app/controllers/' . ucfirst($controller) . '.php';
 
         if (file_exists($controller_file)) {
@@ -41,20 +39,12 @@ class Route
 
         }
 
+        // создание контроллера
         $controller = new $controller;
 
+        // подключение метода
         if (method_exists($controller, $method)) {
             $controller->$method();
         }
-
-
-    }
-
-    function ErrorPage404()
-    {
-        $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
-        header('HTTP/1.1 404 Not Found');
-        header("Status: 404 Not Found");
-        header('Location:'.$host.'404');
     }
 }

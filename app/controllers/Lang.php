@@ -7,6 +7,9 @@ class Lang extends Controller
         parent::__construct();
     }
 
+    /**
+     * отправка i18n данных клиенту
+     */
     public function index()
     {
         $data = $this->i18n();

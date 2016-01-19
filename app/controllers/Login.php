@@ -7,6 +7,9 @@ class Login extends Controller
         parent::__construct();
     }
 
+    /**
+     * Отображение логин формы
+     */
     public function index()
     {
         $data = $this->i18n();
@@ -15,6 +18,9 @@ class Login extends Controller
         $this->view('templates/footer');
     }
 
+    /**
+     *  Проверка логина
+     */
     public function login_check()
     {
         $model = $this->model('main_model');

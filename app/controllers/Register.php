@@ -7,6 +7,9 @@ class Register extends Controller
         parent::__construct();
     }
 
+    /**
+     * Отображение формы регистрации
+     */
     public function index()
     {
         $data = $this->i18n();
@@ -15,6 +18,9 @@ class Register extends Controller
         $this->view('templates/footer');
     }
 
+    /**
+     * Добавление пользователя в БД
+     */
     public function add_user()
     {
         $model = $this->model('main_model');
